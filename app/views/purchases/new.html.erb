@@ -1,0 +1,9 @@
+<body class='purchase_main'>
+  <div class='title'>
+    買取情報を入力してください
+  </div>
+
+  <%= render partial: "shared/purchase-form", locals: { url: purchase_path(@customer.id) %>
+
+  <%= render partial: "shared/toppage_button" %>
+</body>

@@ -1,0 +1,9 @@
+<body class='pawn_main'>
+  <div class='title'>
+    質情報を入力してください
+  </div>
+
+  <%= render partial: "shared/pawn-form", locals: { url: pawns_path(@customer.id) } %>
+
+  <%= render partial: "shared/toppage_button" %>
+</body>
