@@ -4,18 +4,15 @@
   <body class='purchase_main'>
 <% end %>
 
-<div class='title'>検索結果</div>
+  <div class='title'>検索結果</div>
 
-<% if @customer == nil %>
-  <div class="nil_message">
-    該当するデータはありませんでした。検索をやり直してください。
-  </div>
-<% elsif params[:column] == "id" %>
-  <%= render partial: "shared/search-result-customer", locals: {customer_record: @customer} %>
-<% else %>
-  <%= render partial: "shared/search-result-customer", collection: @customer, as: "customer_record" %>
-<% end %>
+  <% if @customer == nil %>
+    <div class="nil_message">
+      該当するデータはありませんでした。検索をやり直してください。
+    </div>
+  <% else %>
+    <%= render partial: "shared/search-result-customer", collection: @customer, as: "customer_record" %>
+  <% end %>
 
   <%= render partial: "shared/back-button" , locals: { back_link: input_customers_path(params[:format]) } %>
-
 </body>
