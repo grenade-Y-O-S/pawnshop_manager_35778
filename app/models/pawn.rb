@@ -12,15 +12,28 @@ class Pawn < ApplicationRecord
   def self.search(column, word)
     return Pawn.where("#{column} LIKE?","#{word}%").order("created_at DESC")
   end
+
   def self.search_pawn_status(column, word, status)
-    return Pawn.find_by("#{column} LIKE? and item_status = ?","#{word}%", status)
-  end
+    if status == "free"
+      return Pawn.find_by("#{column} LIKE?","#{word}%")
+    else
+      return Pawn.find_by("#{column} LIKE? and item_status = ?","#{word}%", status)
+    end
+ end
 
   def self.where_pawn_status(column, word, status)
-    return Pawn.where("#{column} LIKE? and item_status = ?","#{word}%", status)
+    if status == "free"
+      return Pawn.where("#{column} LIKE?","#{word}%")
+    else
+      return Pawn.where("#{column} LIKE? and item_status = ?","#{word}%", status)
+    end
   end
 
   def self.check_pawn_status(column, word, status)
-    return Pawn.where("#{column} LIKE? and item_status = ?","#{word}%", status).exists?
+    if status == "free"
+      return Pawn.where("#{column} LIKE?","#{word}%")
+    else
+      return Pawn.where("#{column} LIKE? and item_status = ?","#{word}%", status).exists?
+    end
   end
 end

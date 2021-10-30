@@ -90,7 +90,7 @@
           利息金額
         </div>
         <div class='result_data'>
-          <%= interest_calculator(pawn.item_price) %>円
+          <%= interest_calculator(pawn.item_price).to_s(:delimited) %>円
         </div>
       </div>
       <div class='customer_data_line'>

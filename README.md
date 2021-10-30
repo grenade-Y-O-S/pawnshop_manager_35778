@@ -8,7 +8,7 @@ Pawnshop- Manager
 質入れ処理・利息管理・質返還処理・質流れ処理・買取処理・データ検索及び編集ができます。
 
 ## URL
-https://github.com/grenade- Y- O- S/pawnshop_manager_35778
+https://github.com/grenade-Y-O-S/pawnshop_manager_35778
 
 ## 利用方法
 ログインなどは必要なく、すぐにご利用いただけます。
@@ -21,19 +21,25 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 - トップページ
 
 【ボタン】
+
 ・「入質」「利息」「買取」「質返還」「質流れ」「データ検索」のページへ遷移できるボタンがある
 
 【表示】
+
 ・上記のボタンのみが表示される
 
 - 入質ページ
 
 【ボタン】
+
 ・新規客データを登録するページへ遷移できるボタンがある
+
 ・リピーター客のデータを検索するページへ遷移できるボタンがある
+
 ・トップページへ遷移できるボタンがある
 
 【表示】
+
 ・上記のボタンのみが表示される
 
 - 新規客データ登録ページ
@@ -45,35 +51,45 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 【ボタン】
 ・新規客データを登録し、質データまたは買取データを登録するページへ遷移できるボタンがある
 (遷移元が入質ページならば質データ登録ページへ、買取ページならば買取データ登録ページへ遷移する)
+
 ・入質ページへ遷移できるボタンがある
+
 ・トップページへ遷移できるボタンがある
 
 - リピーター客データ検索ページ
 
 【検索フォーム】
-・検索項目をプルダウンで選択
-「客番号(客データID)」「姓(漢字)」「姓(カタカナ)」
+
+・検索項目をプルダウンで選択「客番号(客データID)」「姓(漢字)」「姓(カタカナ)」
+
 ・検索キーワードを入力
 
 【ボタン】
 ・検索項目を選択し、質データまたは買取データを登録するページへ遷移できるボタンがある
 (遷移元が入質ページならば質データ登録ページへ、買取ページならば買取データ登録ページへ遷移する)
+
 ・入質ページへ遷移できるボタンがある
+
 ・トップページへ遷移できるボタンがある
 
 - 質データ登録ページ
 
 【フォーム】
+
 ・入力項目
+
 「品物名」「金額」「詳細」「備考」
 
 【ボタン】
+
 ・質データを登録し、入力した客・質データを表示するページへ遷移できるボタンがある
+
 ・トップページへ遷移できるボタンがある
 
 - 質登録データ表示ページ
 
 【ボタン】
+
 ・トップページへ遷移できるボタンがある
 
 【表示】
@@ -82,6 +98,7 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 - 買取ページ
 
 【ボタン】
+
 ・新規客データを登録するページへ遷移できるボタンがある
 ・リピーター客のデータを検索するページへ遷移できるボタンがある
 ・トップページへ遷移できるボタンがある
@@ -92,14 +109,19 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 - 買取データ登録ページ
 
 【フォーム】
+
 ・入力項目
+
 「品物名」「金額」「詳細」
 
 【ボタン】
+
 ・買取データを登録し、入力した客・買取データを表示するページへ遷移できるボタンがある
+
 ・トップページへ遷移できるボタンがある
 
 - 買取登録データ表示ページ
+
 【ボタン】
 ・トップページへ遷移できるボタンがある
 
@@ -259,6 +281,7 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 - 質データ検索結果一覧ページ
 
 【ボタン】
+
 ・質データを選択し、質データ編集ページへ遷移できるボタンがある
 ・質データ検索ページへ遷移できるボタンがある
 ・データ検索ページへ遷移できるボタンがある
@@ -366,13 +389,52 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 【表示】
 ・編集した利息データと、それに紐づく質データが表示される
 
+## 実装した機能についての画像やGIFおよびその説明
+[![Image from Gyazo](https://i.gyazo.com/1502b96c2e1f5fcf1f21f70938481966.gif)](https://gyazo.com/1502b96c2e1f5fcf1f21f70938481966)
+
+[![Image from Gyazo](https://i.gyazo.com/da81c47d8371568dfca611795f6f225b.gif)](https://gyazo.com/da81c47d8371568dfca611795f6f225b)
+まず客データを登録し、その客データに紐づく質データを登録する
+
+[![Image from Gyazo](https://i.gyazo.com/2f039dc7270a118f5898f1a0f37f5b1f.gif)](https://gyazo.com/2f039dc7270a118f5898f1a0f37f5b1f)
+
+[![Image from Gyazo](https://i.gyazo.com/1f1f14858e2080fd3e25e4162ed37d9c.gif)](https://gyazo.com/1f1f14858e2080fd3e25e4162ed37d9c)
+
+[![Image from Gyazo](https://i.gyazo.com/50868e317d928ab5954f837b51e30a70.gif)](https://gyazo.com/50868e317d928ab5954f837b51e30a70)
+すでにデータがある客については検索から質データに紐付ける事ができる
+(買取も同様)
+
+[![Image from Gyazo](https://i.gyazo.com/9b15ef86bb1ddb614d8d672fc555e14b.png)](https://gyazo.com/9b15ef86bb1ddb614d8d672fc555e14b)
+データ検索ページにて、質データを検索した画面
+客の氏名、質の貸付金額、利息金額、これまで支払った利息の回数、期限を表示している
+
+[![Image from Gyazo](https://i.gyazo.com/14147ccfc9f458571c296298ae9c97de.gif)](https://gyazo.com/14147ccfc9f458571c296298ae9c97de)
+
+[![Image from Gyazo](https://i.gyazo.com/85540234fa637ebc1a2031ecd1320323.gif)](https://gyazo.com/85540234fa637ebc1a2031ecd1320323)
+質流れ処理を行う(質返還処理も同じプロセス)
+
+[![Image from Gyazo](https://i.gyazo.com/dc0f3ca5db07a0218ccb4131b958211f.png)](https://gyazo.com/dc0f3ca5db07a0218ccb4131b958211f)
+質データ検索結果ページにて、質データが返還済である事が黄色背景・黒文字で表示されている
+
+[![Image from Gyazo](https://i.gyazo.com/47ba40a283683adc30532942ab29063a.png)](https://gyazo.com/47ba40a283683adc30532942ab29063a)
+同じく、質データが質流れである事が白背景・黒文字で表示されている
+
+
+## 実装予定の機能
+- データ検索で、検索条件に日付を指定できるようにする
+
+- データ検索で、複数の検索条件で検索できるようにする
+
+- 利息データ登録画面で、入力した利息回数に応じて支払う利息金額を表示されるようにする
+
+- 新規の客データを登録する時、生年月日から客の年齢を算出し、18歳未満ならば警告が出るようにする(18歳未満が質取引を利用する事は違法)
+
 ## データベース設計
 ![ER](lib/img/er.png)
 
 ## customersテーブル
 
 | Column          | Type   | Options     |
-| - - - - - - - - - - - - - - -  | - - - - - -  | - - - - - - - - - - -  |
+|-----------------|--------|-------------|
 | last_name       | string | null: false |
 | first_name      | string | null: false |
 | last_name_kana  | string | null: false |
@@ -392,7 +454,7 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 ## pawnsテーブル
 
 | Column       | Type       | Options                        |
-| - - - - - - - - - - - -  | - - - - - - - - - -  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  |
+|--------------|------------|--------------------------------|
 | item_name    | string     | null: false                    |
 | item_price   | integer    | null: false                    |
 | item_detail  | text       | null: false                    |
@@ -408,7 +470,7 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 ## interestsテーブル
 
 | Column           | Type       | Options                        |
-| - - - - - - - - - - - - - - - -  | - - - - - - - - - -  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  |
+|------------------|------------|--------------------------------|
 | interests_number | integer    | null: false                    |
 | pawn             | references | null: false, foreign_key: true |
 
@@ -419,7 +481,7 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 ## purchasesテーブル
 
 | Column          | Type       | Options                        |
-| - - - - - - - - - - - - - - -  | - - - - - - - - - -  | - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -  |
+|-----------------|------------|--------------------------------|
 | buy_item_name   | string     | null: false                    |
 | buy_item_price  | integer    | null: false                    |
 | buy_item_detail | text       | null: false                    |
@@ -432,14 +494,14 @@ https://github.com/grenade- Y- O- S/pawnshop_manager_35778
 ## daily_work_checksテーブル
 
 | Column       | Type | Options     |
-| - - - - - - - - - - - -  | - - - -  | - - - - - - - - - - -  |
+|--------------|------|-------------|
 | message_time | time | null: false |
 
 
 ## gold_pricesテーブル
 
 | Column       | Type    | Options     |
-| - - - - - - - - - - - -  | - - - - - - -  | - - - - - - - - - - -  |
+|--------------|---------|-------------|
 | k18_price    | integer | null: false |
 | k14_price    | integer | null: false |
 | k24_price    | integer | null: false |
