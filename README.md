@@ -1,7 +1,7 @@
 # README
 
 ## アプリケーション名
-Pawnshop- Manager
+Pawnshop Manager
 
 ## アプリケーション概要
 このアプリケーションは、質店の業務管理を目的としたアプリケーションです。
@@ -11,7 +11,11 @@ Pawnshop- Manager
 https://github.com/grenade-Y-O-S/pawnshop_manager_35778
 
 ## 利用方法
-ログインなどは必要なく、すぐにご利用いただけます。
+BASIC認証を導入しています
+
+ID:admin
+
+pass:1234
 
 ## 目指した課題解決
 質店は独特なシステムを用いて運営されており、扱う情報量が多いのでデータ管理をスムーズに行う事を目的として開発しました。
@@ -393,7 +397,7 @@ https://github.com/grenade-Y-O-S/pawnshop_manager_35778
 [![Image from Gyazo](https://i.gyazo.com/1502b96c2e1f5fcf1f21f70938481966.gif)](https://gyazo.com/1502b96c2e1f5fcf1f21f70938481966)
 
 [![Image from Gyazo](https://i.gyazo.com/da81c47d8371568dfca611795f6f225b.gif)](https://gyazo.com/da81c47d8371568dfca611795f6f225b)
-まず客データを登録し、その客データに紐づく質データを登録する
+まず客データを登録し、それに紐づく質データを登録する(どのページでも確認のポップアップが出る)
 
 [![Image from Gyazo](https://i.gyazo.com/2f039dc7270a118f5898f1a0f37f5b1f.gif)](https://gyazo.com/2f039dc7270a118f5898f1a0f37f5b1f)
 
@@ -401,16 +405,26 @@ https://github.com/grenade-Y-O-S/pawnshop_manager_35778
 
 [![Image from Gyazo](https://i.gyazo.com/50868e317d928ab5954f837b51e30a70.gif)](https://gyazo.com/50868e317d928ab5954f837b51e30a70)
 すでにデータがある客については検索から質データに紐付ける事ができる
-(買取も同様)
+(買取も同じ手順)
+
+[![Image from Gyazo](https://i.gyazo.com/4ed691e173c9e61e5ff7fd3935361fd9.gif)](https://gyazo.com/4ed691e173c9e61e5ff7fd3935361fd9)
+
+[![Image from Gyazo](https://i.gyazo.com/123077445b6f9f21b35f686131bf73bc.gif)](https://gyazo.com/123077445b6f9f21b35f686131bf73bc)
+質データを検索し、その質データに紐づく利息データを登録する。登録後は、更新された期限等が表示される
 
 [![Image from Gyazo](https://i.gyazo.com/9b15ef86bb1ddb614d8d672fc555e14b.png)](https://gyazo.com/9b15ef86bb1ddb614d8d672fc555e14b)
 データ検索ページにて、質データを検索した画面
 客の氏名、質の貸付金額、利息金額、これまで支払った利息の回数、期限を表示している
 
+[![Image from Gyazo](https://i.gyazo.com/24ef8d2086f4ff0df349e52647c94bed.gif)](https://gyazo.com/24ef8d2086f4ff0df349e52647c94bed)
+
+[![Image from Gyazo](https://i.gyazo.com/8ffef207a0dee320b1e7a588ae07fbe2.gif)](https://gyazo.com/8ffef207a0dee320b1e7a588ae07fbe2)
+質返還処理。取引状態を返還済に変更する(重要な手順なので独立させている)
+
 [![Image from Gyazo](https://i.gyazo.com/14147ccfc9f458571c296298ae9c97de.gif)](https://gyazo.com/14147ccfc9f458571c296298ae9c97de)
 
 [![Image from Gyazo](https://i.gyazo.com/85540234fa637ebc1a2031ecd1320323.gif)](https://gyazo.com/85540234fa637ebc1a2031ecd1320323)
-質流れ処理を行う(質返還処理も同じプロセス)
+質流れ処理。取引状態を質流れに変更する。
 
 [![Image from Gyazo](https://i.gyazo.com/dc0f3ca5db07a0218ccb4131b958211f.png)](https://gyazo.com/dc0f3ca5db07a0218ccb4131b958211f)
 質データ検索結果ページにて、質データが返還済である事が黄色背景・黒文字で表示されている
@@ -427,6 +441,10 @@ https://github.com/grenade-Y-O-S/pawnshop_manager_35778
 - 利息データ登録画面で、入力した利息回数に応じて支払う利息金額を表示されるようにする
 
 - 新規の客データを登録する時、生年月日から客の年齢を算出し、18歳未満ならば警告が出るようにする(18歳未満が質取引を利用する事は違法)
+
+- 毎日19時以降になると、その日1日の業務内容を確認するページのリンクをトップページに表示する
+
+- 金やプラチナの相場データを登録し、質や買取の登録ページに相場データ表示ページへのリンクを表示する
 
 ## データベース設計
 ![ER](lib/img/er.png)
@@ -490,24 +508,9 @@ https://github.com/grenade-Y-O-S/pawnshop_manager_35778
 ### Association
 -  belongs_to :customer
 
+## ローカルでの動作方法
 
-## daily_work_checksテーブル
-
-| Column       | Type | Options     |
-|--------------|------|-------------|
-| message_time | time | null: false |
-
-
-## gold_pricesテーブル
-
-| Column       | Type    | Options     |
-|--------------|---------|-------------|
-| k18_price    | integer | null: false |
-| k14_price    | integer | null: false |
-| k24_price    | integer | null: false |
-| k18wg_price  | integer | null: false |
-| k14wg_price  | integer | null: false |
-| pt850_price  | integer | null: false |
-| pt900_price  | integer | null: false |
-| pt950_price  | integer | null: false |
-| pt1000_price | integer | null: false |
+1.GitHubの、このアプリケーションのページを開く (https://github.com/grenade-Y-O-S/pawnshop_manager_35778)
+2.画面右上にある「Clone or dowload」ボタンをクリックするとURLがクリップボードにコピーされる
+3.コマンドプロンプトに「$ git clone クリップボードにコピーしたURL」と入力する
+4.レポジトリ名のフォルダができ、その中にファイルがダウンロードされる
