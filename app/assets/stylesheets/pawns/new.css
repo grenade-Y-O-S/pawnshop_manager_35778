@@ -9,3 +9,18 @@
   width: 200px;
   margin: 50px 0px 0px calc(50% - 100px);
 }
+
+.black-back{
+  width: 120px;
+  background: black;
+  color: white;
+}
+
+.box-text{
+  border: 1px solid white;
+  padding-left: 5px;
+}
+
+.interest-price{
+  margin-left: 80px;
+}
